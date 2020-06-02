@@ -1,0 +1,22 @@
+{
+  "name": "typechain",
+  "version": "1.0.0",
+  "description": "making virtual coin with typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev24day/TypeScript_Blockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev24day/TypeScript_Blockchain/issues"
+  },
+  "homepage": "https://github.com/dev24day/TypeScript_Blockchain#readme",
+  "dependencies": {
+    "typescript": "^3.9.3"
+  }
+}
