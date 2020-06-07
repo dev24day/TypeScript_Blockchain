@@ -4,8 +4,7 @@
   "description": "making virtual coin with typescript",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "prestart": "node_modules/.bin/tsc"
+    "start": "tsc-watch --onSuccess 'node dist/index.js'"
   },
   "repository": {
     "type": "git",
@@ -19,5 +18,8 @@
   "homepage": "https://github.com/dev24day/TypeScript_Blockchain#readme",
   "dependencies": {
     "typescript": "^3.9.3"
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.8"
   }
 }

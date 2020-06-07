@@ -2,11 +2,12 @@
   "compilerOptions": {
     "module": "commonjs", //웹에서 구동하면 "AMD", NodeJS에서 구동하면 "commonjs"
     "target": "ES2015", //자바스크립트 버전 설정
-    "sourceMap": true //TS의 어느 부분이 JS의 어느 부분인지 => *.js.map으로 구현됨
+    "sourceMap": true, //TS의 어느 부분이 JS의 어느 부분인지 => *.js.map으로 구현됨
+    "outDir": "dist"
   },
   "include": [
     //compile에 포함할 파일
-    "index.ts"
+    "src/**/*"
   ],
   "exclude": ["node_modules"]
 }
