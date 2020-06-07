@@ -6,7 +6,7 @@
     "outDir": "dist"
   },
   "include": [
-    //compile에 포함할 파일
+    //compile에 포함할 파일 **/* => all files no matter how deep
     "src/**/*"
   ],
   "exclude": ["node_modules"]
