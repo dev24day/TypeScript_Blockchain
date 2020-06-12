@@ -49,10 +49,27 @@ const createNewBlock = (data: string): Block => {
   const newTimestamp: number = getNewTimestamp();
   const newHash: string = calcuateBlockHash(newIndex, previousBlock.hash, data, newTimestamp);
   const newBlock: Block = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
+  addBlock(newBlock);
   return newBlock;
 }
 
-const isBlockValid = (candBlock: Block, previousBlock: Block): boolean => {
-  return Block.isValid(candBlock) && Block.isValid(previousBlock);
+const checkHash = (aBlock: Block): boolean => {
+  return calcuateBlockHash(aBlock.index, aBlock.previousHash, aBlock.data, aBlock.timestamp) === aBlock.hash;
 }
+
+const addBlock = (candBlock: Block): void => {
+  if (isBlockValid(candBlock, getLatestBlock())) blockchain.push(candBlock);
+}
+const isBlockValid = (candBlock: Block, previousBlock: Block): boolean => {
+  if (!Block.isValid(candBlock)) return false;
+  else if (!(candBlock.previousHash === previousBlock.hash)) return false;
+  else if (!(candBlock.index === previousBlock.index + 1)) return false;
+  else if (!checkHash(candBlock)) return false;
+  else return true;
+}
+console.log(getBlockChain());
+createNewBlock("firstBlock");
+console.log(getBlockChain());
+createNewBlock("secondBlock");
+console.log(getBlockChain());
 export { };
